@@ -1,0 +1,37 @@
+{
+  "pass": true,
+  "hardwareAccess": false,
+  "networkAccess": false,
+  "checks": [
+    "Exact official input reconstructs both pinned Korean DFU hashes",
+    "Restore mode uses original DFUs and never fetches a patch",
+    "Wrong original and mode are rejected before device access",
+    "Corrupt patch is rejected",
+    "Delta bounds and malformed archives fail closed",
+    "Device inspection is read-only and rejects other boards",
+    "Full simulated install writes exact data in OSD then firmware order",
+    "Tampered prepared data is rejected before DNLOAD",
+    "Transfer stops without retry: {\"failBlock\":1}",
+    "Transfer stops without retry: {\"shortBlock\":0}",
+    "Transfer stops without retry: {\"zeroBlock\":0}",
+    "Transfer stops without retry: {\"chunkState\":10,\"chunkStatus\":7}",
+    "Transfer stops without retry: {\"chunkState\":5,\"chunkStatus\":7}",
+    "Transfer stops without retry: {\"outStatus\":\"stall\"}",
+    "Manifest failure remains unconfirmed: {\"manifestState\":10,\"manifestStatus\":7}",
+    "Manifest failure remains unconfirmed: {\"manifestThrow\":true}",
+    "Device busy wait respects reported timeout",
+    "Endless busy state is bounded",
+    "Disconnect classification: osd-final",
+    "Disconnect classification: firmware-data",
+    "Disconnect classification: firmware-final"
+  ],
+  "testedFiles": {
+    "app.js": "55b6282b645c26f873ad0c95ca62f6ed6200dd08f98fb00b3d49137c73206c85",
+    "binary.js": "2fbef7128c15bdb537a94b62830a9727b80538f44a96ae1626b7eddcc087397c",
+    "core.js": "b20e8e53508814508acc8778a5e6d25f6d851d66a34bd1d7f4bd0fe89a5bf1a6",
+    "dfu-descriptor.js": "220184b58a0afaacb02a075dddfce587501ba101e28fba7dde2336b202a0b061",
+    "index.html": "49ff666a233240afb78770e7a0560f0b9c8fa747ef0ccfbb43b6d5238638b57f",
+    "package-data.js": "8d4a330741f9f553e8ba8e13332f2c610feafeca6ab632fa9fcd73580385487f",
+    "transport.js": "03f1d213ac62f2f23cda683c026d196ff0fdbb82f0bcf48eb396916e4e3cf2ad"
+  }
+}

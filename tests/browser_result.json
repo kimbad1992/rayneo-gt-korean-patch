@@ -1,0 +1,124 @@
+{
+  "pass": true,
+  "hardwareAccess": false,
+  "testedFiles": {
+    "app.js": "55b6282b645c26f873ad0c95ca62f6ed6200dd08f98fb00b3d49137c73206c85",
+    "index.html": "49ff666a233240afb78770e7a0560f0b9c8fa747ef0ccfbb43b6d5238638b57f",
+    "core.js": "b20e8e53508814508acc8778a5e6d25f6d851d66a34bd1d7f4bd0fe89a5bf1a6",
+    "binary.js": "2fbef7128c15bdb537a94b62830a9727b80538f44a96ae1626b7eddcc087397c",
+    "transport.js": "03f1d213ac62f2f23cda683c026d196ff0fdbb82f0bcf48eb396916e4e3cf2ad",
+    "package-data.js": "8d4a330741f9f553e8ba8e13332f2c610feafeca6ab632fa9fcd73580385487f"
+  },
+  "checks": [
+    "initial no device access",
+    "official ZIP locally patched to pinned Korean DFU hashes",
+    "manual HID query",
+    "explicit DFU transition",
+    "DFU board inspection without DNLOAD",
+    "complete simulated two-image install",
+    "normal completion offers boot verification",
+    "firmware final disconnect is neutral reboot pending at 99%",
+    "boot board mismatch rejected",
+    "old boot version rejected then correct version reaches 100%",
+    "boot verification only sends HID information query",
+    "package change clears pending boot verification",
+    "mid-transfer disconnect remains failure",
+    "OSD final disconnect remains failure and stops firmware",
+    "original package validation",
+    "invalid ZIP clears install readiness",
+    "no automatic retry",
+    "no external network requests",
+    "no page errors"
+  ],
+  "simulatedScenarios": {
+    "normal": {
+      "scenario": "normal",
+      "hidVersion": [
+        26,
+        9,
+        22
+      ],
+      "hidBoard": 64,
+      "hidQueries": 4,
+      "modeChanges": 1,
+      "usbChoices": 1,
+      "writes": 15392,
+      "markers": [
+        1,
+        0
+      ],
+      "blocks": {
+        "0": 1260,
+        "1": 14132
+      },
+      "permissionCalls": 4,
+      "disconnects": 0
+    },
+    "reboot": {
+      "scenario": "firmware-manifest-disconnect",
+      "hidVersion": [
+        26,
+        9,
+        22
+      ],
+      "hidBoard": 64,
+      "hidQueries": 4,
+      "modeChanges": 1,
+      "usbChoices": 1,
+      "writes": 15392,
+      "markers": [
+        1,
+        0
+      ],
+      "blocks": {
+        "0": 1260,
+        "1": 14132
+      },
+      "permissionCalls": 4,
+      "disconnects": 1
+    },
+    "firmware-mid-transfer-disconnect": {
+      "scenario": "firmware-mid-transfer-disconnect",
+      "hidVersion": [
+        26,
+        9,
+        22
+      ],
+      "hidBoard": 64,
+      "hidQueries": 2,
+      "modeChanges": 1,
+      "usbChoices": 1,
+      "writes": 14133,
+      "markers": [
+        1
+      ],
+      "blocks": {
+        "0": 1,
+        "1": 14132
+      },
+      "permissionCalls": 2,
+      "disconnects": 1
+    },
+    "osd-manifest-disconnect": {
+      "scenario": "osd-manifest-disconnect",
+      "hidVersion": [
+        26,
+        9,
+        22
+      ],
+      "hidBoard": 64,
+      "hidQueries": 2,
+      "modeChanges": 1,
+      "usbChoices": 1,
+      "writes": 14132,
+      "markers": [
+        1
+      ],
+      "blocks": {
+        "1": 14132
+      },
+      "permissionCalls": 2,
+      "disconnects": 1
+    }
+  }
+}

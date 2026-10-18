@@ -1,0 +1,20 @@
+# Vendor and generated firmware must never be committed.
+*.dfu
+*.zip
+*.apk
+*.bin
+*.ttf
+*.otf
+*.woff*
+official-loader.js
+global-ota-*.js
+source_assets/
+auxiliary_assets/
+node_modules/
+__pycache__/
+dist/
+*.log
+*.pem
+*.key
+.env*
+tests/installer-preview.png

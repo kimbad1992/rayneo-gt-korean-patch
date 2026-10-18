@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>RayNeo GT 한국어 설치기</title><link rel="stylesheet" href="style.css"></head>
+<body><main>
+ <header><span class="eyebrow">LOCAL PATCH INSTALLER · v2.0.0-beta.1</span><h1>RayNeo GT 한국어 설치기</h1><p>GT를 PC에 USB 데이터 케이블로 직접 연결하세요. 다른 RayNeo 앱과 업데이트 창은 닫고, 안경 한 대만 연결해 주세요.</p></header>
+ <div id="unsupported" class="notice" hidden>이 브라우저에서는 USB 설치를 사용할 수 없습니다. 최신 데스크톱 Chrome으로 이 주소를 열어 주세요.</div>
+ <section><div class="section-title"><span>1</span><h2>펌웨어 선택</h2></div>
+  <div class="row"><label class="file-button">공식 원본 ZIP 선택<input id="package-file" type="file" accept=".zip"></label><button id="load-korean" disabled>한국어 패치 적용</button><button id="load-original" class="secondary" disabled>원본 복구 준비</button></div>
+  <p id="package-status" role="status">공식 원본 20260922 ZIP을 선택하면 이 브라우저 안에서 검증하고 한국어 패치를 적용합니다.</p>
+  <small>원본/완성 펌웨어는 포함되어 있지 않습니다. <a href="https://ota.rayneo.com/" target="_blank" rel="noreferrer">RayNeo 공식 업데이트 사이트</a> · <a href="https://file-tdp-ffalcon-asia-o.api.leiniao.com/res/7142cd8f/thirdapk_5e0d34331c71a20ea4ba8826cea0c1a2.zip" target="_blank" rel="noreferrer">20260922 공식 원본 다운로드</a>. 다운로드한 ZIP을 그대로 선택하세요. 설치 전 공식 업데이트 창은 닫아 주세요.</small>
+ </section>
+ <section><div class="section-title"><span>2</span><h2>GT 연결</h2></div>
+  <div class="row"><button id="connect-hid">GT 정보 연결</button><button id="enter-dfu" class="secondary" disabled>업데이트 모드 전환</button><button id="connect-dfu" class="secondary">업데이트 기기 연결</button></div>
+  <p id="device-status" role="status">GT 정보 연결 → 업데이트 모드 전환 → 업데이트 기기 연결 순서로 진행하세요.</p>
+  <small>모드 전환 후 화면이 꺼질 수 있습니다. 잠시 기다린 뒤 ‘업데이트 기기 연결’에서 새로 나타난 장치를 선택하세요. 이미 업데이트 모드인 기기는 마지막 버튼으로 연결할 수 있습니다.</small>
+ </section>
+ <section><div class="section-title"><span>3</span><h2>설치</h2></div>
+  <p id="target">검증된 펌웨어와 업데이트 기기를 연결하면 설치할 수 있습니다.</p>
+  <button id="install" disabled>선택한 펌웨어 설치</button>
+  <button id="verify-boot" class="secondary" hidden>재부팅 확인</button>
+  <progress id="progress" value="0" max="100"></progress><p id="result" role="status" aria-live="polite">설치를 시작하면 완료 응답이 나올 때까지 케이블을 분리하거나 창을 닫지 마세요.</p>
+  <div class="notice">동일한 패치 결과를 설치한 GT 한 대의 정상 부팅이 사용자에 의해 확인되었습니다. 이 공개판의 새 USB 전송 구현은 실기기 미검증 베타입니다. ‘재부팅 확인’은 정상 모드와 버전을 조회하며, 한국어 메뉴 표시는 안경에서 확인해야 합니다. 원본 재설치는 기기가 USB 업데이트 모드로 인식될 때 사용할 수 있습니다.</div>
+ </section>
+ <details><summary>진행 기록</summary><pre id="log"></pre><button id="save-log" class="secondary">기록 저장</button></details>
+ <footer>펌웨어는 이 PC에서 읽고 USB로 전송합니다. 파일이나 기기 정보가 외부 서버로 전송되지 않습니다. 비공식 로컬 도구입니다.</footer>
+</main><script type="module" src="app.js"></script></body></html>
