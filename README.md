@@ -6,8 +6,8 @@ GT의 기존 언어를 유지하면서 한국어 항목과 한국어 메뉴를 �
 이 저장소와 Release에는 원본/완성 펌웨어, 추출된 원본 이미지, RayNeo 업데이터 JavaScript, 폰트 파일을 포함하지 않습니다.
 사용자가 준비한 정확한 공식 원본 ZIP에 변경분을 적용하고, 결과를 브라우저 메모리에서 GT로 전송합니다.
 
-동일한 패치 결과를 이전 설치기로 설치한 **GT Gemini1 한 대**의 정상 부팅이 사용자에 의해 확인되었습니다.
-이 공개판에서 새로 작성한 USB 전송 코드는 모의 장치로 검증했으며 **실제 장치 설치는 아직 검증하지 않은 베타**입니다. GT Max는 실기기 검증하지 않았습니다.
+**한국어 패치 펌웨어를 실제 RayNeo GT(Gemini1)에 설치했고, 재부팅 후 정상 동작과 업데이트 적용을 확인했습니다.** 실제 설치에는 **약 28분으로, 30분 가까이** 걸렸습니다.
+이 확인은 이전 설치기로 동일한 패치 결과를 설치한 GT 한 대에 대한 사용자 실기기 확인입니다. 공개판에서 새로 작성한 USB 전송 코드 자체는 모의 장치 검증을 마친 베타이며, 실기기 설치는 별도로 검증하지 않았습니다. GT Max도 실기기 검증하지 않았습니다.
 
 ## 설치
 
@@ -19,10 +19,24 @@ GT의 기존 언어를 유지하면서 한국어 항목과 한국어 메뉴를 �
 4. **공식 원본 ZIP 선택**을 누릅니다. 브라우저에서 원본과 패치를 검증하고 한국어 펌웨어를 준비합니다. ZIP을 풀거나 수정하지 마세요.
 5. GT 한 대를 PC에 USB 데이터 케이블로 직접 연결합니다. HDMI 변환 젠더를 사용하지 않습니다. 다른 RayNeo 앱과 공식 업데이트 창은 닫습니다.
 6. **GT 정보 연결 → 업데이트 모드 전환 → 업데이트 기기 연결 → 선택한 펌웨어 설치** 순서로 진행합니다.
-7. 설치 탭을 화면에 띄워 두고 케이블과 서버 창을 유지합니다. 이전 실기기 시도에서는 메뉴 이미지 전송에 약 27분이 걸렸습니다. 환경에 따른 완료 시간을 보장하지 않습니다.
+7. **실제 설치에 30분 가까이 걸린 사례가 있습니다.** 설치 탭을 화면에 띄워 두고 케이블과 서버 창을 유지합니다. 진행률이 천천히 오를 수 있으므로 새로고침하거나 연결을 끊지 마세요. 아래 실기기 기록을 참고하되, 환경에 따라 소요 시간은 달라질 수 있습니다.
 8. 마지막 전송 뒤 기기가 재부팅하며 USB 연결이 해제될 수 있습니다. **재부팅 확인 대기**가 나오면 화면이 돌아온 뒤 **재부팅 확인**을 눌러 정상 모드와 버전 `20260922`를 확인합니다. 이 버튼은 정보만 읽습니다. 언어 메뉴에서 한국어 표시도 직접 확인하세요.
 
 이미 이전 한글판을 설치했다면 이 설치기를 쓰기 위해 다시 설치할 필요는 없습니다. 생성되는 두 DFU 파일은 이전 한국어 추가 v1과 동일합니다.
+
+## 실제 장치 설치 결과와 소요 시간
+
+2026년 10월 17일, 기존 버전 `20260723`인 GT(Gemini1)에 한국어 패치 펌웨어를 설치했습니다. 실제 로그의 소요 시간은 다음과 같습니다.
+
+| 단계 | 기록 시각 | 소요 시간 |
+| --- | --- | --- |
+| 메뉴 이미지(OSD) 전송 및 완료 응답 | 22:00:01 → 22:26:46 | 26분 45초 |
+| 본체 펌웨어 전송 후 재부팅에 따른 연결 해제 | 22:26:46 → 22:27:55 | 1분 9초 |
+| 설치 시작부터 마지막 전송 후 연결 해제까지 | 22:00:01 → 22:27:55 | **27분 54초** |
+
+기기는 업데이트 후 USB 연결을 해제하고 다시 연결되었으며, 사용자가 이후 **정상 부팅과 업데이트 적용을 직접 확인했습니다.** 당시 설치기는 재부팅으로 사라진 업데이트 장치의 마지막 응답을 읽으려다 연결 해제 오류를 표시했지만, 실제 업데이트는 적용되었습니다. 현재 설치기는 이 상황을 ‘재부팅 확인 대기’로 구분합니다.
+
+위 시간은 한 대의 실측 사례이며 모든 환경의 예상 완료 시간은 아닙니다. 연결 해제 시각까지의 로그이므로, 이후 화면이 돌아와 정상 동작을 확인하는 데 걸린 시간은 포함하지 않습니다.
 
 ## 원본 복구와 오류
 
@@ -70,4 +84,6 @@ python tools/package_release.py
 
 ## English
 
-Unofficial Korean localization patch for the exact RayNeo GT global firmware dated 20260922. Download the vendor's original ZIP yourself, start the localhost installer, and select that ZIP. The browser verifies the input, applies the bundled deltas locally, and verifies the resulting images before any device write. No original or prepatched firmware is distributed. The project-authored USB implementation is beta and has only been tested with simulated devices; one user reported successful boot of the identical patched images using the previous private installer. See NOTICE.md for third-party rights and licensing scope.
+Unofficial Korean localization patch for the exact RayNeo GT global firmware dated 20260922. Download the vendor's original ZIP yourself, start the localhost installer, and select that ZIP. The browser verifies the input, applies the bundled deltas locally, and verifies the resulting images before any device write. No original or prepatched firmware is distributed.
+
+**The patched firmware was installed on a real RayNeo GT (Gemini1), and the user confirmed successful boot and that the update had been applied. Installation took nearly 30 minutes:** 26 minutes 45 seconds for OSD, then 1 minute 9 seconds for firmware, totaling 27 minutes 54 seconds from installation start to the reboot-related USB disconnect. Subsequent boot confirmation time is not included. This was one device using the previous private installer with identical patched images; times may vary. The public installer's newly written USB implementation remains beta and has only been tested with simulated devices. See NOTICE.md for third-party rights and licensing scope.
